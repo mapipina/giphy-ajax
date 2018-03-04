@@ -1,5 +1,5 @@
 // Needs to be active on document load
-$(document).ready(function(){
+// $(document).ready(function(){
   var actors = ["Judi Dench", "Diane Lane", "Meryl Streep", "Jennifer Lawrence", "Kate Hudson", "Allison Williams"];
 
 
@@ -27,7 +27,7 @@ $(document).ready(function(){
   // click on actors names
   function displayGIFS() {
     var selected = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=Kit9Fo5OHeGDtHLUurXM65czq5nwC7UU&limit=10&tag=" + selected;
+    var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + selected + "&api_key=Kit9Fo5OHeGDtHLUurXM65czq5nwC7UU&limit=10";
     console.log(queryURL);
 
     $.ajax({
@@ -43,11 +43,11 @@ $(document).ready(function(){
     })
 
   }
-
-
   createButtons();
-  $("#actor-buttons").click(displayGIFS);
+  $("button.actor").click(displayGIFS);
+  
+  
   
 
 
-})
+// })
