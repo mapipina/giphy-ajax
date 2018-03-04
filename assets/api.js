@@ -27,7 +27,7 @@
   // click on actors names
   function displayGIFS() {
     var selected = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" + selected + "&api_key=Kit9Fo5OHeGDtHLUurXM65czq5nwC7UU&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + selected + "&api_key=Kit9Fo5OHeGDtHLUurXM65czq5nwC7UU&limit=10";
     console.log(queryURL);
 
     $.ajax({
@@ -35,14 +35,23 @@
       method: "GET"
     }).then(function(response){
       console.log(response);
-      var imageURL = response.data.image_url;
-      var actorImage = $("<img>");
-      actorImage.attr("src", imageURL);
-      $("#actor-gifs").append(actorImage);
+      var results = response.data;
+      for (var i = 0; i < results.length; i++) {
+    
+        var imageURL = results[i].images.fixed_height.url;
+      //  var fixedStill = results[i].images.fixed_height_still.url;
+        var actorImage = $("<img>");
+        var rating = $("<h2>" + "Rating: " + results[i].rating + "<h2/>");
+        actorImage.attr("src", imageURL);
+        $("#actor-gifs").append(actorImage);
+        actorImage.prepend(rating);
+      }
+
 
     })
 
   }
+
   createButtons();
   $("button.actor").click(displayGIFS);
   
