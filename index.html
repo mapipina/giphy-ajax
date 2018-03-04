@@ -2,8 +2,7 @@
 <html>
 <head>
 	<title>Fun GIPHY Game</title>
-    <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 		<!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     	<!-- CSS files -->
@@ -13,13 +12,12 @@
 <body>
 	<div class="container">
 		<h1>GIF (pronounced jif) Search</h1>
-		<div id="movies-view"></div>
-		<form id="movie-form">
-			<label for="movie-input">Add a Movie Bro</label>
-			<input type="text" id="movie-input"><br>
-
-      <!-- Button triggers new movie to be added -->
-            <input id="add-movie" type="submit" value="Add a Movie Bro">
+		<div id="actor-buttons" data-name="actors"></div>
+		<div id="actor-gifs"></div>
+		<form id="actor-form">
+			<label for="actor-input">Add an actor</label>
+			<input type="text" id="actor-input"><br>
+            <input id="add-actor" type="submit" value="Submit">
         </form>
 
 	</div>
