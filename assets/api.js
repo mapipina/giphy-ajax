@@ -6,6 +6,8 @@ $(document).ready(function(){
 
   //going to focus on pushing new buttons rather than ajax for now
   function createButtons(){
+    $("#actor-buttons").empty();
+    
     for (var i = 0; i < actors.length; i++) {
       var b = $("<button>");
       b.addClass("actor");
