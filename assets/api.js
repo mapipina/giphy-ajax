@@ -43,7 +43,7 @@
         var imageURL = results[i].images.fixed_height.url;
       //  var fixedStill = results[i].images.fixed_height_still.url;
         var actorImage = $("<img>");
-        var rating = $("<h2>" + "Rating: " + results[i].rating + "<h2/>");
+        var rating = $("<p>").text("Rating: " + results[i].rating);
         actorImage.attr("src", imageURL);
         $("#actor-gifs").append(actorImage);
         actorImage.prepend(rating);
@@ -56,7 +56,7 @@
   // calling the create Buttons function
   createButtons();
   // click event for when a button with a class of actor is clicked 
-  $("button.actor").click(displayGIFS);
+  $("#actor-buttons").on("click", "button.actor", displayGIFS);
   
   
   
