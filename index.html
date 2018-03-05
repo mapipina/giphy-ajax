@@ -12,13 +12,22 @@
 <body>
 	<div class="container">
 		<h1>Actor Search</h1>
-		<div id="actor-buttons"></div>
-		<div id="actor-gifs"></div>
-		<form id="actor-form">
-			<label for="actor-input">Add an actor</label>
-			<input type="text" id="actor-input"><br>
-            <input id="add-actor" type="submit" value="Submit">
-        </form>
+		<div class="row"><div id="actor-buttons"></div></div>
+		<div class="row">
+			<div class="col-md-4" id="form">
+				<form id="actor-form">
+			    	<label for="actor-input">Add an actor</label>
+					<input type="text" id="actor-input"><br>
+            		<input id="add-actor" type="submit" value="Submit">
+        		</form>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12" id="actor-gifs"></div>	
+		</div>
+		
+		
 
 	</div>
 

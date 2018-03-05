@@ -42,15 +42,19 @@
     
         var imageURL = results[i].images.fixed_height.url;
       //  var fixedStill = results[i].images.fixed_height_still.url;
+        var imageDiv = $("<div class='imageDiv'>")
         var actorImage = $("<img>");
         var rating = $("<p>").text("Rating: " + results[i].rating);
         actorImage.attr("src", imageURL);
-        $("#actor-gifs").append(actorImage);
-        actorImage.prepend(rating);
+        
+        imageDiv.prepend(rating);
+        imageDiv.append(actorImage);
+        $("#actor-gifs").append(imageDiv);
       }
 
 
     })
+    $("#actor-gifs").empty();
 
   }
   // calling the create Buttons function

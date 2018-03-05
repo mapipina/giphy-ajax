@@ -1,7 +1,26 @@
 body {
 	font-family: 'Pacifico', cursive;
+	background-image: url(../images/stars.jpg);
 }
 
-form {
+#form {
 	float: right;
+}
+
+h1 {
+	text-align: center;
+	color: white;
+}
+
+label {
+	color: white;
+}
+
+p {
+	color: white;
+}
+
+.imageDiv {
+	float: left;
+	margin: 5px;
 }
