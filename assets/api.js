@@ -41,16 +41,33 @@
       for (var i = 0; i < results.length; i++) {
     
         var imageURL = results[i].images.fixed_height.url;
-      //  var fixedStill = results[i].images.fixed_height_still.url;
-        var imageDiv = $("<div class='imageDiv'>")
-        var actorImage = $("<img>");
+       
+        var fixedStill = results[i].images.fixed_height_still.url;
+      
+        var imageDiv = $("<span class='imageDiv'>")
+        var actorImage = $("<img class='gif'>");
         var rating = $("<p>").text("Rating: " + results[i].rating);
         actorImage.attr("src", imageURL);
+        actorImage.attr("data-state", "animate");
+        actorImage.attr("data-still", fixedStill);
+        actorImage.attr("data-animate", imageURL)
         
         imageDiv.prepend(rating);
         imageDiv.append(actorImage);
         $("#actor-gifs").append(imageDiv);
-      }
+
+        $(".gif").click(function(){
+          var state = $(this).attr("data-state");
+          if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+            attribute = fixedStill;
+          } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+          }
+        }) 
+      };
 
 
     })
