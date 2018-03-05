@@ -56,7 +56,7 @@
         imageDiv.append(actorImage);
         $("#actor-gifs").append(imageDiv);
 
-        $(".gif").click(function(){
+        $("img.gif").click(function(){
           var state = $(this).attr("data-state");
           if (state === "still") {
             $(this).attr("src", $(this).attr("data-animate"));
