@@ -56,18 +56,18 @@
         imageDiv.append(actorImage);
         $("#actor-gifs").append(imageDiv);
 
-        $("img.gif").click(function(){
+        
+      };
+      $("img.gif").click(function(){
           var state = $(this).attr("data-state");
           if (state === "still") {
             $(this).attr("src", $(this).attr("data-animate"));
             $(this).attr("data-state", "animate");
-            attribute = fixedStill;
           } else {
             $(this).attr("src", $(this).attr("data-still"));
             $(this).attr("data-state", "still");
           }
-        }) 
-      };
+        });
 
 
     })
